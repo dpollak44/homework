@@ -58,7 +58,7 @@ def __init__(self,name, account_num,balance):
            self.name = name
            self.account_num = account_num
            self.balance = balance
-           account_id +=1
+           Bank_Account.account_id +=1
 
 def get_name(self):
             return self.name
@@ -80,7 +80,7 @@ def set_balance(self,balance):
 
 
 @classmethod
-def get_account_id(account_id):
+def get_account_id(cls):
             return account_id
 
 
