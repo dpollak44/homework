@@ -1,0 +1,60 @@
+html {
+background-color: white;
+}
+
+body {
+    background-color: aqua;
+    color: rgba(21, 32, 100, 0.694);
+    padding: 5em;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+body h2{
+    font-style: italic;
+}
+
+
+header {
+    box-shadow: 3px 1px 2px 1px black;
+    color: blueviolet;
+    text-align: center;
+    background-color: aquamarine
+}
+
+header h1 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px rgb(66, 30, 61);
+    letter-spacing: 1.5px;
+    background-color: beige;
+    margin-bottom: 0px;
+    border-style: double;
+    border-color:blue;
+    border-width: 15px;
+    height: 2rem;
+    padding: 5px;
+    margin: 10px;
+    margin-top: 20;
+   font-style: italic;
+}
+header h6{
+    transform: skew(11111111111112222233333333333333deg, 0deg);
+    margin: 2px;
+    margin-bottom: 3em;
+    font-size: 1em;
+    font-weight: lighter;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+header a {
+    font-size: .80rem;
+    font-weight: 100;
+    text-decoration: none;
+}
+header a:hover {
+ color: red;
+}
+
+
