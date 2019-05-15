@@ -3,22 +3,71 @@ background-color: white;
 }
 
 body {
-    background-color: aqua;
-    color: rgba(21, 32, 100, 0.694);
+    background: radial-gradient(circle, rgb(192, 34, 34) 0%, rgba(9, 9, 121, 1) 13%, rgb(15, 107, 52) 35%, rgb(165, 151, 27) 43%, rgb(146, 68, 15) 55%, rgb(168, 10, 63) 69%, rgb(243, 94, 9) 89%, rgb(165, 17, 17) 100%);
+
+    color: rgb(192, 34, 34);
     padding: 5em;
     text-align: center;
     max-width: 1000px;
     margin: auto;
+    border:5px black;
+}
+
+.content{
+    overflow: auto;
 }
 .food_info{
     color: rgb(71, 255, 191);
     border: 1px solid black;
     border-style: ridge;
 }
+.food{
+
+    border: 5px solid black;
+    background-color: cadetblue;
+
+float: left;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.food img{
+    height: 15rem;
+    width: 15rem;
+}
+
+#ChFr{
+
+    margin-top: 10em;
+    border: 5px solid black;
+    background-color: chocolate;
+    float: right;
+}
+
+#ChFr img{
+    height: 15rem;
+    width: 15rem;
+}
+
+#bckgChfrImg{
+    border: 10px;
+    background-image: url("45/images/cheesefries.jpg");
+    background-repeat: no-repeat;
+}
+
+.clearfix {
+    clear: both;
+}
+
 
 body h2{
     font-style: italic;
 }
+
+body div {
+    border: 15px salmon;
+}
+
 
 
 header {
