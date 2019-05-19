@@ -36,6 +36,25 @@ float: left;
     width: 15rem;
 }
 
+#logo{
+    border: 20px;
+    background-color: blue;
+    padding-top: 0px;
+}
+
+#Name1{
+    transform: rotate(90deg) translate(150px,250px);
+    font-size: 100px;
+    letter-spacing: 2.5px;
+
+
+}
+#Name2{
+    font-style: oblique;
+    font-size: 90px;
+    translate: (-20px,-20px);
+}
+
 #ChFr{
 
     margin-top: 10em;
@@ -81,19 +100,13 @@ header h1 {
     font-size: 2rem;
     text-shadow: 2px 2px 2px rgb(66, 30, 61);
     letter-spacing: 1.5px;
-    background-color: beige;
     margin-bottom: 0px;
-    border-style: double;
-    border-color:blue;
-    border-width: 15px;
     height: 2rem;
-    padding: 5px;
+    padding: 10px;
     margin: 10px;
-    margin-top: 20;
-   font-style: italic;
+    margin-top: 15px;
 }
 header h6{
-    transform: skew(11111111111112222233333333333333deg, 0deg);
     margin: 2px;
     margin-bottom: 3em;
     font-size: 1em;

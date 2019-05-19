@@ -1,0 +1,22 @@
+html{    background-color: black;
+
+}
+
+body{
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+}
+body p{
+     
+        border: 5px solid black;
+        margin: 15px;
+        padding: 50px;
+        padding-left: 100px;
+        padding-right: 100px;
+
+        background-color: yellow;
+        display: inline-block;
+
+    
+}
