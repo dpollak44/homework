@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>feedback</title>
+    <style>
+        body {
+            width: 80%;
+            margin: auto;
+        }
+
+        input:not([type="submit"]),
+        textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: .5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tell us about your experience.</h1>
+    <form action="processForm.php" method="post">
+        <label for="firstName">First Name:</label><input name="firstName" id="firstName" placeholder=" first name "
+            required minlength="3" maxlength="10">
+        <label for="lastName"></label>Last Name:<input name="lastName" id="lastName" placeholder=" last name " required
+            minlength="4" maxlength="18">
+        <label for="email"></label>Email:<input type="email" name="email" id="email" placeholder=" email " required>
+        <label for="tel"></label>Telephone:<input type="tel" name="tel" id="tel"
+            placeholder="Enter your telephone herje">
+        <label for="rating"></label>Rate your experience:<input type="range" name="rating" id="rating" min="1" max="10">
+        <label for="comments"></label>Comments:
+        <textarea placeholder="Please write a comment here"></textarea>
+        <hr>
+        <input type="submit">
+
+
+
+
+</body>
+
+</html>
