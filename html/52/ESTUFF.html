@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        padding-bottom: 120px;
+    }
+
+    #products h2,
+    #financials h2,
+    #aboutus h2 {
+        text-align: left !important;
+    }
+
+    section h2 {
+        text-align: center;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    caption {
+        caption-side: top;
+    }
+
+    table {
+        justify-content: center !important;
+    }
+
+
+    td {
+        text-align: right;
+    }
+
+    nav a:hover {
+        text-decoration: underline !important;
+        color: red !important;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="mx-auto" style="width: 80% ">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" active>
+                    <a class="nav-link" href="#products">Products</a>
+
+                </li>
+                <li class="nav-item" active>
+                    <a class="nav-link" href="#signup">Sign Up</a>
+
+                </li>
+
+                <li class="nav-item" active>
+                    <a class="nav-link" href="#financials">Financials</a>
+                </li>
+
+                <li class="nav-item" active>
+                    <a class="nav-link" href="#aboutus">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="mx-auto" style="width: 80%;">
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1 class="display-4 text-uppercase font-weight-bold">estuff</h1>
+                <p class="lead font-weight-bold">A <em>PCS</em> company</p>
+            </div>
+
+        </div>
+        <section class="mb-5" id="products">
+
+            <h2>Products</h2>
+
+            <p class="mb-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, eos! Optio eum eligendi repellendus
+                impedit
+                sit nulla, facere blanditiis beatae sed numquam magnam, ex sint!
+            </p>
+            <div class="container">
+                <div class="text-justify row">
+                    <figure class="col-lg-4 border-right">
+                        <h2>Computers</h2>
+                        <img src=" figures/macworld.jpg" class="img-fluid" alt="computer" />
+                        <figcaption class="mb-5">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quas ipsum consequatur nihil,
+                            tenetur
+                            maiores non, iste, harum corrupti voluptate sapiente in dolor iusto enim maxime laudantium
+                            optio
+                            ullam
+                            aliquam.
+                            Some extra text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, tempora?
+                        </figcaption>
+                    </figure>
+                    <figure class="col-lg-4 border-right">
+                        <h2>Choirs</h2>
+                        <video src="figures/El%20Hanaar%20Hazeh.mp4" poster="figures/shira.png" class="img-fluid"
+                            controls></video>
+                        <figcaption class="mb-5">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel beatae iusto eum, voluptatibus
+                            iure,
+                            ipsam
+                            voluptas vero eaque ab debitis quisquam nemo ducimus facilis ut cumque, similique aliquam
+                            saepe
+                            amet.
+                        </figcaption>
+                    </figure>
+                    <figure class="col-lg-4">
+                        <h2>Candy</h2>
+                        <img src="figures/candy.png" class="img-fluid" alt="candy" />
+                        <figcaption class="mb-5">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum facere distinctio dolores
+                            corrupti
+                            architecto. Ullam impedit accusamus tempore sequi minus laboriosam maxime perferendis
+                            temporibus,
+                            voluptas voluptates, aliquam enim ab culpa.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section class="jumbotron text-center" id=" signup">
+            <h2>Sign Me Up!</h2>
+            <div class="d-flex justify-content-center">
+                <form class="form-inline" action="test.html" method="get">
+
+                    <label>Name:
+                        <input type="text" class="form-control mb-2 mr-sm-2" name="name" placeholder="Your Name"
+                            required>
+                    </label>
+                    <label>Email:
+                        <input type="email" class="form-control mb-2 mr-sm-2" name="email" placeholder="Your Email"
+                            required>
+                    </label>
+                    <button type="submit" class="btn btn-primary mb-2">Sign Me Up!</button>
+                </form>
+            </div>
+        </section>
+        <section id="financials">
+            <h2>Financials</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, nisi. Aut, esse, eaque molestiae iste
+            veritatis
+            sed consequuntur, libero fugiat consequatur magni autem maiores quidem!
+            <div class="d-flex justify-content-center">
+                <table class="table table-striped table-bordered table-hover table-responsive ">
+                    <caption class="d-flex justify-content-center">
+                        <h3>Profits - By Quarter</h3>
+                    </caption>
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Year</th>
+                            <th scope="col">1st Quarter profits</th>
+                            <th scope="col">2nd Quarter profits</th>
+                            <th scope="col">3rd Quarter profits</th>
+                            <th scope="col">4th Quarter profits</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">2012</th>
+                            <td>$1254564.32</td>
+                            <td>$1154545.67</td>
+                            <td>$1236566.98</td>
+                            <td>$1368546.32</td>
+                            <td class="text-danger">$5050934.29</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2013</th>
+                            <td>$1385475.87</td>
+                            <td>$1485690.23</td>
+                            <td>$1365568.54</td>
+                            <td>$1545435.11</td>
+                            <td class="text-danger">$5623344.75</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2014</th>
+                            <td>$1589878.76</td>
+                            <td>$1698986.45</td>
+                            <td>$1645456.32</td>
+                            <td>$1789890.35</td>
+                            <td class="text-danger">$6545657.88</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2015</th>
+                            <td>$1889776.22</td>
+                            <td>$1854565.71</td>
+                            <td>NA</td>
+                            <td>NA</td>
+                            <td class="text-danger">$3654654.93</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="text-right" colspan="5">Total</th>
+                            <td class="text-danger">$20978798.85</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <section id="aboutus">
+            <h2>About Us</h2>
+            <p class="mb-50">
+                Start
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi nulla tempora accusantium fugiat iste
+                eos.
+                Molestias ab quaerat vero mollitia rerum a laboriosam, sit ea, voluptate cum, repellendus asperiores
+                minus
+                ullam dolor natus dolore. Amet sint beatae minima cumque odit at placeat neque, eum, libero voluptatibus
+                voluptate odio vel quia deserunt quo nihil nostrum. Laudantium inventore rerum repudiandae sequi omnis
+                aspernatur cum eveniet exercitationem numquam, ea, fugit sit nesciunt, dolorem animi aliquam voluptas
+                sapiente. Consectetur eveniet corrupti doloribus corporis praesentium similique repudiandae non,
+                quisquam
+                laudantium maiores dolorem asperiores soluta maxime accusantium magnam quam, voluptas ea natus. Aut
+                reprehenderit cumque rem, molestiae dolor explicabo commodi voluptatibus, quod quo, nihil harum.
+                Nostrum,
+                cumque dignissimos, laborum nobis modi ducimus, commodi rerum unde quasi et aperiam vel tempora eius
+                minus.
+                Fugit delectus debitis totam perferendis atque, aliquid necessitatibus dolorem vero error temporibus
+                eos,
+                ratione natus nihil maxime nostrum, reprehenderit quo sunt veniam repudiandae! Aperiam soluta velit
+                blanditiis accusantium quae deserunt veniam recusandae, dolore eligendi suscipit facere itaque totam
+                officiis debitis cupiditate est architecto repellendus? Vitae cupiditate ad minima maiores illo nobis,
+                blanditiis iusto distinctio odit, rerum aspernatur! Deleniti, iste maxime. Consectetur itaque vitae quod
+                amet eaque totam neque inventore id iusto modi autem laboriosam quis, quidem cupiditate fugit corrupti
+                provident ipsa expedita. Adipisci, laboriosam, quisquam, ipsum fugiat reiciendis nulla consectetur nam
+                asperiores vitae est voluptatibus. Illum unde consequuntur amet blanditiis voluptate dicta cum, fugiat
+                a,
+                nulla iure adipisci modi asperiores accusamus velit enim, beatae sint dignissimos corrupti quisquam.
+                Nesciunt maiores nulla, esse dolore quas accusamus sed iure amet atque sunt nam eligendi officia, quam
+                provident id nihil eum facere molestias aliquam ratione, fuga labore perferendis rem ullam. Esse minus
+                vitae
+                beatae ut, veritatis quis, ducimus magnam cumque aliquam sit alias nobis vel eligendi enim porro omnis,
+                architecto repellat. Architecto nemo beatae hic ut fugit ex aperiam incidunt, debitis laudantium neque?
+                Fugiat dolorum, provident neque tenetur sed veritatis soluta molestiae ipsam harum excepturi! Et
+                perspiciatis cumque eos modi veritatis delectus, nemo tenetur aspernatur iure nihil inventore odit
+                dolore,
+                quos, corrupti facere tempore earum! Officia facilis quod beatae quibusdam aliquam quidem suscipit
+                similique, repellendus voluptas tempore omnis, delectus fugiat. Maxime aspernatur quos, incidunt
+                blanditiis
+                voluptatem nulla laboriosam magnam eligendi minus dicta tenetur voluptatibus culpa facere! Consequatur
+                aut
+                accusantium deleniti eaque possimus dolorem autem dolorum saepe debitis nesciunt reiciendis qui, officia
+                voluptate beatae velit repudiandae nostrum sint! Minima expedita quia distinctio iusto nulla enim vel
+                iste,
+                veniam eveniet doloribus ratione neque quae animi deserunt eum, ducimus ipsum quam architecto tenetur,
+                debitis molestias maxime sit. Praesentium blanditiis eum corrupti, quas earum impedit eveniet alias sit
+                quisquam quaerat hic. Quod, labore? Maiores, illum enim? Vel perferendis dolor, minus totam quas iure
+                dolorum. Illo distinctio fuga cumque soluta quasi quia saepe recusandae qui quae dolore modi omnis eos
+                assumenda officiis, a nesciunt non cupiditate repellendus aspernatur temporibus consequatur nihil ullam
+                optio amet. Optio consectetur, unde suscipit modi, error quod cum aliquam aperiam, rerum illum nesciunt
+                tempora sed dolor magnam perspiciatis aut nemo distinctio nihil quo. Explicabo nobis aliquam obcaecati
+                dignissimos.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deleniti minus maiores perferendis quidem
+                velit quaerat esse est, magnam repellendus ipsam id iusto quisquam laudantium, ab accusantium eius. Nemo
+                doloribus deserunt possimus, sed dicta ipsum rerum soluta nostrum odit labore, repudiandae deleniti
+                quaerat
+                dignissimos? Excepturi dolores consequatur nesciunt dolorum, nemo delectus omnis ipsam optio dolorem
+                commodi
+                qui porro saepe temporibus culpa officia maiores alias dignissimos odio quibusdam. Ex, ipsum ipsa! Sit
+                deserunt officia quasi error fugiat commodi architecto facilis modi dolor repellendus labore,
+                repudiandae
+                delectus, iste sint totam voluptates nemo optio accusantium mollitia? Laudantium placeat ipsa libero
+                magnam
+                aliquid dignissimos at nesciunt aliquam distinctio aperiam eius impedit, id ad laborum aut. Minima ex
+                ratione distinctio, est esse quae mollitia praesentium inventore laboriosam suscipit. Dolores illo
+                consectetur architecto, vero quibusdam ullam aut doloribus. Voluptates, dolore, aut quam illum nulla
+                impedit
+                corrupti ratione deserunt sunt commodi, repudiandae quasi laboriosam! Ratione id inventore sint tenetur
+                facere fuga ipsum maxime. Quod maiores provident sint. Non distinctio ad soluta obcaecati atque, eveniet
+                at!
+                Ipsam, alias voluptates odit cupiditate excepturi atque accusantium doloribus vitae repellendus
+                perspiciatis
+                libero doloremque ratione ipsum laborum dicta adipisci corrupti, quo facilis velit ea eius veritatis
+                deserunt omnis. Voluptates eius itaque corrupti! Omnis dolor assumenda illo illum cupiditate animi,
+                atque
+                velit explicabo quisquam labore necessitatibus sapiente! Minima, reiciendis numquam? Illum, ratione
+                minus
+                dolores doloremque maiores earum impedit omnis ex libero nobis. Quos optio odit reiciendis suscipit,
+                animi
+                repellendus laboriosam eligendi natus ex ad sequi nesciunt, reprehenderit vel architecto. Nemo
+                laboriosam
+                nulla velit nobis ea, repellat totam, reprehenderit veritatis, obcaecati itaque magni possimus nihil
+                voluptatum recusandae atque earum qui? Possimus vitae fugit at debitis velit fugiat quas in totam,
+                aspernatur iure reiciendis reprehenderit autem ipsum esse voluptate iusto asperiores molestiae doloribus
+                id
+                deleniti accusamus eius quae? Saepe temporibus recusandae itaque repellendus exercitationem pariatur
+                deleniti eos id accusamus, mollitia rem atque quod omnis eveniet autem ea culpa. Quisquam optio dolor
+                labore
+                laboriosam unde culpa recusandae, voluptatum ab dignissimos dolorum reprehenderit molestias accusamus
+                eius!
+                Accusamus pariatur praesentium fugit ad itaque natus mollitia officiis eum asperiores nihil alias eos
+                architecto eligendi, labore odit, minus non aliquid voluptas quia ipsam explicabo. Cum repellat
+                dignissimos
+                explicabo quidem facilis a laboriosam, hic molestiae recusandae laborum possimus! Aspernatur saepe
+                officiis
+                animi, nihil consectetur omnis consequuntur nostrum magnam. Dolorem deserunt assumenda iusto sed. Minima
+                molestias officia ab nulla modi? Qui sequi illo totam sapiente a velit suscipit iste unde. Non
+                recusandae
+                rerum nisi mollitia tempore dignissimos! Quas pariatur ratione voluptates dolorem doloremque officiis
+                consequuntur minus quo, fugit atque at error. Unde facere ad odio eligendi natus, aut amet dolorem
+                minima
+                explicabo quisquam quaerat ducimus iure similique dolore officiis nesciunt libero ex ullam id animi
+                voluptas
+                corrupti beatae porro doloremque. Nobis sit consequuntur nihil ad necessitatibus nisi, pariatur
+                laudantium
+                natus nostrum aspernatur delectus explicabo iure ipsa inventore accusantium animi voluptatibus magni
+                quidem
+                sequi eligendi reiciendis! Esse, molestias. Quas ipsa eius hic tenetur explicabo amet vero quibusdam,
+                quae
+                animi, ducimus dolore illum facere ratione consequuntur earum cumque vitae mollitia? Rem illo officia
+                laborum.
+                End
+            </p>
+        </section>
+        <footer>
+            <!-- <p>&copy; PCS 2019</p> -->
+            <nav class="navbar fixed-bottom navbar-dark bg-dark">
+                <p class="navbar-brand mx-auto" style="width: 80% "> PCS 2019</p>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
