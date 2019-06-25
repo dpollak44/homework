@@ -76,27 +76,30 @@ console.log('ourSome(mixedLetters,uppercase)', ourSome(mixedLetters, uppercase))
 
 
 
-function ifOnly(theArray, test, action) {
-    for (let i = 0; i < theArray.length; i++) {
-        if (test(theArray[i]) === true) {
-            action(theArray[i]);
-        }
-
-    }
-    return action;
-
+function lowercase(letter) {
+    letter = letter.toLowerCase;
+    return letter;
 }
 
-
-function add(letter) {
+function ifOnly(theArray, test, action) {
     let newArray = [];
-    newArray.push(letter);
+    for (let i = 0; i < theArray.length; i++) {
+        if (test(theArray[i]) === true) {
+            newArray[i] = action(theArray[i]);
+        }
+        else {
+            newArray[i] = theArray[i];
+        }
+    }
     return newArray;
 
 }
 
 
-console.log('ifOnly(upperLetters,uppercase,push', ifOnly(upperLetters, uppercase, add));
+
+
+
+console.log('ifOnly(upperLetters,uppercase,lowercase)', ifOnly(upperLetters, uppercase, lowercase));
 
 function ifOnly2(theArray, callback, action) {
     theArray.forEach(element => {
