@@ -77,7 +77,7 @@ console.log('ourSome(mixedLetters,uppercase)', ourSome(mixedLetters, uppercase))
 
 
 function lowercase(letter) {
-    letter = letter.toLowerCase;
+    letter = letter.toLowerCase();
     return letter;
 }
 

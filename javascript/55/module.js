@@ -33,9 +33,12 @@ console.log('dayUtils.getDayNumber("Monday")', dayUtils.getDayNumber("Monday"));
 const interestCalc = (function () {
     'use strict';
 
-    function setIntRate(rate) {
-        let intRate = rate;
-        return intRate;
+    let rate;
+
+    function setIntRate(aRate) {
+        //let intRate = rate;
+        //return intRate;
+        rate = aRate;
     }
 
     function setNumYears(years) {
@@ -46,11 +49,14 @@ const interestCalc = (function () {
     return {
         setIntRate: setIntRate,
         setNumYears: setNumYears,
-        calculateInterest: function (amount, rate, years) {
+        calculateInterest: function (amount/*, rate, years*/) {
             return (amount * rate * years);
         }
     };
 
 }());
 
-console.log(interestCalc.calculateInterest(100, interestCalc.setIntRate(0.10), interestCalc.setNumYears(5)));
+//console.log(interestCalc.calculateInterest(100, interestCalc.setIntRate(0.10), interestCalc.setNumYears(5)));
+interestCalc.setIntRate(0.10);
+interestCalc.setNumYears(5);
+interestCalc.calculateInterest(100);
