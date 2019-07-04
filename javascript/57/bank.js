@@ -6,6 +6,9 @@
         balance: 100.50
     };
 
+    const otherAct = checkingAct.balance(10);
+    console.log(otherAct());
+
     const savingsAct = {
         balance: 200.50
     };

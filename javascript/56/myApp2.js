@@ -6,7 +6,11 @@ window.myApp.dayUtils = (function (dayUtils) {
 
 
 
-    dayUtils.stringCaseInsensitiveEquals = (name1, name2) => name1.toUpperCase() === name2.toUpperCase();gt
+    dayUtils.stringCaseInsensitiveEquals = (name1, name2) => name1.toUpperCase() === name2.toUpperCase();
+
+    // dayUtils.stringCaseInsensitiveEquals = function (name1, name2) {
+    //     return name1.toUpperCase() === name2.toUpperCase();
+    // };
 
 
     return dayUtils;
