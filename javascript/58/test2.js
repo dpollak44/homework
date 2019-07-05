@@ -1,3 +1,4 @@
+// SL - comment - I get 6 warnings in jshint with my settings
 'use strict'
 
 for (let i = 0; i < 10; i++) {
