@@ -5,7 +5,7 @@
 let numCounters = 0;
 
 
-const createCounters = function () {
+const createCounters = נhkfunction () {
     'use strict';
 
     numCounters++;
