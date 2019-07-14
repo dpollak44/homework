@@ -6,10 +6,12 @@
 
 
     let intervalId;
+
     let i = 1;
 
+    let colors = [];
+
     function colorChanger() {
-        const colors = [];
 
         let j = i * 4;
         document.body.style.backgroundColor = `rgb(${i * 4},${(i * 2)},${(i * 5)})`;
@@ -32,8 +34,6 @@
         }
 
         else { i = 0; }
-
-        return colors;
 
     }
 
@@ -72,7 +72,7 @@
                 clearTimeout(intervalId);
                 intervalId = 0;
                 startButton.innerHTML = 'Start';
-                colorChangerTable(colorChanger);
+                colorChangerTable(colors);
 
             }
         }
