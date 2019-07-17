@@ -35,6 +35,7 @@
 
         else { i = 0; }
 
+
     }
 
     function colorChangerTable(colors) {
@@ -72,7 +73,7 @@
                 clearTimeout(intervalId);
                 intervalId = 0;
                 startButton.innerHTML = 'Start';
-                colorChangerTable(colors);
+                colorChangerTable(colorChanger());
 
             }
         }
