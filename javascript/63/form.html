@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #contactForm {
+            background-color: lightblue;
+            padding: 6px;
+            box-sizing: border-box;
+            width: 250px;
+            height: 126px;
+            margin-bottom: 5em;
+        }
+
+        .formGroup label {
+            width: 40px;
+            display: inline-block;
+        }
+
+        .formGroup {
+            margin-bottom: 2px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="contactForm">
+        <div class="formGroup">
+            <label for="first">first</label>
+            <input id="first" name="first" required />
+        </div>
+        <div class="formGroup">
+            <label for="last">last</label>
+            <input id="last" name="last" required />
+        </div>
+        <div class="formGroup">
+            <label for="address">address</label>
+            <input type="address" id="address" name="address" required />
+        </div>
+
+        <div class="buttons">
+            <button id="submit">Add Contact</button>
+        </div>
+        <input id=checked type="checkbox">
+    </form>
+
+
+
+    <table id="contactsTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="3">No contacts loaded</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="form.js"></script>
+
+
+</body>
+
+</html>

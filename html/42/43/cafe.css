@@ -40,14 +40,6 @@ header h1 {
     margin-top: 15px;
 }
 
-header h6{
-    margin: 2px;
-    margin-bottom: 3em;
-    font-size: 1em;
-    font-weight: lighter;
-    font-style: italic;
-    letter-spacing: 2px;
-}
 
 header a {
     font-size: .80rem;
