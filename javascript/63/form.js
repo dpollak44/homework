@@ -28,11 +28,11 @@
 
 
     contactForm.submit(event => {
-        if ($('#checked').checked) {
+        if ($('#checkbox').is(":checked")) {
             const newContact = {
                 firstName: firstNameInput.val(),
                 lastName: lastNameInput.val(),
-                addresssInput: addresssInput.val()
+                address: addresssInput.val()
             };
 
             addContact(newContact);
