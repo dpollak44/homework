@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        #contactForm {
+            background-color: lightblue;
+            padding: 6px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            box-sizing: border-box;
+            width: 222px;
+            height: 126px;
+            margin-left: -111px;
+            margin-top: -63px;
+            display: none;
+        }
+
+        .formGroup label {
+            width: 40px;
+            display: inline-block;
+        }
+
+        .formGroup {
+            margin-bottom: 2px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="addContact">Add Contact</button><br>
+    <button id="loadContacts">Load Contacts</Link:favicon></button>
+    <table id="contactsTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="4">No contacts loaded</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form id="contactForm">
+        <div class="formGroup">
+            <label for="first">first</label>
+            <input id="first" name="first" required />
+        </div>
+        <div class="formGroup">
+            <label for="last">last</label>
+            <input id="last" name="last" required />
+        </div>
+        <div class="formGroup">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <div class="formGroup">
+            <label for="phone">phone</label>
+            <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="buttons">
+            <button>add</button>
+            <button id="cancel" type="button">cancel</button>
+        </div>
+    </form>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="contacts.js"></script>
+</body>
+
+</html>
