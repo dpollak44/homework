@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ShrinkBot</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: auto 20rem 20rem auto;
+            grid-template-rows: 10rem 20rem 20rem 10rem;
+            grid-template-areas:
+                "header header header header"
+                ". main main ."
+                ". main main ."
+                "footer footer footer footer";
+        }
+
+        header {
+            grid-area: header;
+            text-align: center;
+        }
+
+        #screen {
+            grid-area: main;
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 5rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>SHRINK-BOT</h2>
+    </header>
+
+    <div id="screen"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="sd.js"></script>
+
+</body>
+
+</html>

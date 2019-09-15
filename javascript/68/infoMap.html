@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        #sidebar,
+        #map {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar {
+            float: left;
+            width: 25%;
+            overflow-y: scroll;
+            box-sizing: border-box;
+            padding-left: 1em;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #sidebar li {
+            margin-bottom: 1em;
+            cursor: pointer;
+            border: 1px solid gray;
+        }
+
+        #sidebar li img {
+            height: 50px;
+        }
+
+        #sidebar li:hover {
+            text-decoration: underline;
+        }
+
+        #sidebar img {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 2px;
+        }
+
+        .summary {
+            display: none;
+        }
+
+        /*.visited {
+            color: lightgray;
+        }
+        .active {
+            color: red;
+        }*/
+        #map {
+            width: 75%;
+        }
+
+        #controls {
+            text-align: center;
+            padding: .5em 0;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <aside id="sidebar">
+        <div id="controls">
+            <form id="inputForm">
+                <input id="tags" />
+                <input id="rows" type="number" min="1" max="2000" value="10" />
+                <button>go</button>
+            </form>
+        </div>
+        <ul></ul>
+    </aside>
+    <div id="map"></div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc4sOkTALO0vvS368hW5KwvnB6cUxpbZQ&callback=initMap&libraries=drawing"
+        async></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="infoMap.js"></script>
+</body>
+
+</html>
