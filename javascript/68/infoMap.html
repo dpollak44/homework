@@ -7,81 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        html,
         body,
-        #sidebar,
+        #sideDiv,
         #map {
             height: 100%;
             margin: 0;
-            padding: 0;
         }
 
-        #sidebar {
+        #sideDiv {
             float: left;
             width: 25%;
             overflow-y: scroll;
-            box-sizing: border-box;
-            padding-left: 1em;
         }
 
-        #sidebar ul {
+        #sideDiv ul {
             list-style-type: none;
             padding: 0;
         }
 
-        #sidebar li {
-            margin-bottom: 1em;
-            cursor: pointer;
-            border: 1px solid gray;
+        #sideDiv li {
+            margin-bottom: 2em;
         }
 
-        #sidebar li img {
-            height: 50px;
-        }
-
-        #sidebar li:hover {
-            text-decoration: underline;
-        }
-
-        #sidebar img {
-            width: 50px;
-            vertical-align: middle;
-            margin-right: 2px;
-        }
-
-        .summary {
-            display: none;
-        }
-
-        /*.visited {
-            color: lightgray;
-        }
-        .active {
-            color: red;
-        }*/
         #map {
             width: 75%;
         }
 
-        #controls {
+        #inputForm {
             text-align: center;
-            padding: .5em 0;
-            border-bottom: 1px solid black;
         }
     </style>
 </head>
 
 <body>
-    <aside id="sidebar">
-        <div id="controls">
+    <div id="sideDiv">
+        <div id="formDiv">
             <form id="inputForm">
-                <input id="tags" />
-                <input id="rows" type="number" min="1" max="2000" value="10" />
-                <button>go</button>
+                <input id="findPlace" />
+                <input id="numRows" type="number" max="100" />
+                <button>start</button>
             </form>
         </div>
         <ul></ul>
-    </aside>
+    </div>
     <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=your-key-here&callback=initMap&libraries=drawing"
         async></script>
