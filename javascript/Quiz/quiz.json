@@ -1,0 +1,18 @@
+[
+    {
+        "customer": "Bob",
+        "address": "123 Any Street",
+        "items": [
+            {
+                "item": "cookies",
+                "quantity": 5,
+                "total": 4.95
+            },
+            {
+                "item": "jelly beans",
+                "quantity": 2,
+                "total": 3
+            }
+        ]
+    }
+]
