@@ -5,7 +5,7 @@ export default function Recipe(props) {
     return (
         <>
             <ul>
-                <li onClick= ></li>
+                <li onClick = ></li>
                 <li></li>
             </ul>
             <h2>{props.recipe.name}</h2>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Recipe from './Recipeg';
+import Recipe from './Recipes';
 
 class App extends Component {
   state = {

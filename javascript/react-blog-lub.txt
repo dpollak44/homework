@@ -1,0 +1,349 @@
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Redirect, Switch, Link } from 'react-router-dom';
+import Header from './Header';
+import BlogList from './BlogList';
+import Test from './Test';
+import Blog from './Blog';
+import './App.css';
+
+export default class App extends Component {
+  state = {
+    selectedBlog: null
+  };
+
+
+  render() {
+
+    return (
+      <BrowserRouter>
+        <div>
+          <Header />
+          <hr />
+          <Switch>
+            <Route path="/blogs" exact component={BlogList} />
+            <Route path="/test" component={Test} />
+            <Route path="/blog/:blogId" component={Blog} />
+            <Redirect exact from="/" to="/blogs" />
+            <Route render={() => <h1 className="fourOhFour">No such page. 404 <Link to="/">Click to go to home page</Link></h1>} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+
+
+//////////////////
+blog.js
+
+import React, { Component } from 'react';
+import Post from './Post';
+
+const NUM_POSTS = 3;
+
+export default class Blog extends Component {
+    state = {
+        posts: [],
+        postIndex: 0,
+        loading: false,
+        error: null
+    };
+
+    componentDidMount() {
+        this.setState({
+            loading: true
+        });
+
+        const blogId = this.props.match.params.blogId;
+
+            fetch(`https://jsonplaceholder.typicode.com/posts?userId=${blogId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load posts for ${blogId}`);
+                    }
+                    return response.json();
+                })
+                .then(posts => {
+                    this.setState({
+                        posts: posts,
+                        postIndex: 0,
+                        loading: false
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                    this.setState({
+                        loading: false,
+                        error: err.message ? err.message : 'Failed to load'
+                    });
+                });
+
+
+        fetch(`https://jsonplaceholder.typicode.com/users?id=${blogId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load blog info for ${blogId}`);
+                }
+                return response.json();
+            })
+            .then(blogInfo => {
+                this.setState({
+                    title: `${blogInfo[0].name}'s Blog`
+                });
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }
+
+    handlePrevious = () => {
+        this.setState({
+            postIndex: this.state.postIndex - NUM_POSTS
+        });
+    }
+
+    handleNext = () => {
+        this.setState({
+            postIndex: this.state.postIndex + NUM_POSTS
+        });
+    }
+
+    render() {
+        const { loading, error, posts, postIndex } = this.state;
+
+        if (loading) {
+            return <h4 className="loading">loading... </h4>;
+        }
+        if (error) {
+            return <h4 className="error">{error}</h4>
+        }
+
+        return (
+            <div>
+                <h2 style={{ textAlign: 'center' }}>{this.state.title}</h2>
+                {posts
+                    .slice(postIndex, postIndex + NUM_POSTS)
+                    .map(post => <Post key={post.id} post={post} />)}
+                <button disabled={postIndex === 0} onClick={this.handlePrevious}>prev</button>
+                <button disabled={postIndex > posts.length - NUM_POSTS} className="next" onClick={this.handleNext}>next</button>
+            </div>
+        );
+    }
+}
+
+
+////////////////////////
+blogList
+
+
+
+import React, { Component } from "react";
+import BlogInfo from './BlogInfo';
+
+export default class BlogList extends Component {
+    state = {
+        blogs: null,
+        loading: false,
+        error: null
+    };
+
+    componentDidMount() {
+        this.setState({
+            loading: true
+        });
+
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load blog list');
+                    }
+                    return response.json();
+                })
+                .then(blogs => {
+                    this.setState({
+
+                        blogs: blogs,
+                        loading: false
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                    this.setState({
+                        loading: false,
+                        error: err.message ? err.message : 'Failed to load'
+                    });
+                });
+    }
+
+
+    render() {
+        const { loading, error, blogs } = this.state;
+
+        if (loading) {
+            return <h4 className="loading">loading... </h4>;
+        }
+        if (error) {
+            return <h4 className="error">{error}</h4>
+        }
+
+        return (
+            <>
+                {blogs &&
+                    blogs.map(blog =>
+                        <BlogInfo key={blog.id} blog={blog} /*onBlogSelected={this.props.onBlogSelected}*/ />)}
+            </>
+        );
+    }
+}
+
+
+
+//////////////////////////
+BlogInfo
+
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './BlogInfo.css';
+
+export default class BlogInfo extends Component {
+
+
+    render() {
+
+        const { blog } = this.props;
+        return (
+            <Link to={`/blog/${blog.id}`} className="blog">
+                <div className="title">{blog.name}</div>
+                <div className="website">{blog.website}</div>
+                <div className="company">
+                    <div>{blog.company.name}</div>
+                    <div>{blog.company.catchPhrase}</div>
+                    <div>{blog.company.bs}</div>
+                </div>
+            </Link>
+        );
+    }
+}
+
+
+
+
+///////////////////////////
+post.js
+
+
+import React, { Component } from 'react';
+import Comment from './Comment';
+import './Post.css';
+
+export default class Post extends Component {
+    state = {
+        commentsShowing: false,
+        loading: false,
+        error: null
+    };
+
+    toggleComments = () => {
+        if (!this.state.comments) {
+            this.loadComments();
+        }
+
+        this.setState({
+            commentsShowing: !this.state.commentsShowing
+        });
+    };
+
+    loadComments() {
+        this.setState({
+            loading: true
+        });
+
+        setTimeout(() => {
+            fetch(`https://jsonplaceholder.typicode.com/comments?postId=${this.props.post.id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load comments for post ${this.props.post.id}`);
+                    }
+                    return response.json();
+                })
+                .then(comments => {
+                    this.setState({
+                        comments: comments,
+                        loading: false
+                    });
+                })
+                .catch(err => {
+                    console.error(err);
+                    this.setState({
+                        loading: false,
+                        error: err.message ? err.message : 'Failed to load'
+                    });
+                });
+
+    }
+
+    render() {
+        let comments;
+
+        const { id, title, body } = this.props.post;
+        const { loading, error } = this.state;
+
+        if (loading) {
+            comments = <div className="loading comments-status">loading... </div>;
+        }
+        if (error) {
+            comments = <div className="error comments-status">{error}</div>;
+        }
+        else if (this.state.commentsShowing && this.state.comments) {
+            comments = <div className="comments">
+                {this.state.comments.map(comment => <Comment key={comment.id} comment={comment} />)}
+            </div>;
+        }
+
+        return (
+            <div className="post">
+                <div className="title">{title} - {id}</div>
+                <div className="body">{body}</div>
+                <button onClick={this.toggleComments}>{this.state.commentsShowing ? 'hide' : 'show'} comments</button>
+                {comments}
+            </div>
+        );
+    }
+}
+
+
+
+//////////////////////
+
+comment.js
+
+import React from 'react';
+import './Comment.css';
+
+export default props => {
+    const { body, name, email } = props.comment;
+
+    return (
+        <div className="comment">
+            <div>{body}</div>
+            <div className="author"><span className="name">{name}</span> {email}</div>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

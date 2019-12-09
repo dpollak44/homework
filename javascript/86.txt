@@ -1,0 +1,6 @@
+&&-if the left side exists the right side will happen
+
+to maintain the right this-.bind(this)
+,or make the function an arrow function
+
+in a function {prop},in a class {this.props}
