@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 export default class Posts extends Component {
 
-    // state = {
-
-    // }
+    state = {
+        posts: []
+    }
 
     componentDidMount() {
         this.fetchPosts();
@@ -19,9 +19,9 @@ export default class Posts extends Component {
                 this.setState({
                     posts: posts
                 });
-                setTimeout(() => {
-                    console.log(posts)
-                }, 1000);
+
+                console.log(posts)
+
                 // console.log(posts)
             })
             .catch(err => {
@@ -37,7 +37,9 @@ export default class Posts extends Component {
 
 
         return (
-            <></>
+            <>
+                {this.state.posts && this.state.posts.map(post => <div>{post.body}</div>)}
+            </>
         )
 
         // <h2 style={{ textAlign: 'center' }}> {this.props.blogger.id} </h2>

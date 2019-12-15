@@ -2,10 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-
   state = {
-    // selectedStock: null
-  };
+    stocks: [
+      {
+        id: 1,
+        name: 'Apple'
+      },
+      {
+        id: 2,
+        name: 'Google'
+
+      }
+    ]
+  }
 
   // handleStockSelected = stock => {
   //   this.setState({
@@ -15,24 +24,24 @@ class App extends Component {
 
 
 
-  componentDidMount() {
-    fetch('https://api-v2.intrinio.com/companies?has_stock_prices=true&api_key=OmNkZWQyZGQxNDc5NWZjMTQ3NWI3NjJhZjljOThkMzQ2')
+  // componentDidMount() {
+  //   fetch('https://api-v2.intrinio.com/companies?has_stock_prices=true&api_key=OmNkZWQyZGQxNDc5NWZjMTQ3NWI3NjJhZjljOThkMzQ2')
 
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to load');
-        }
-        return response.json();
-      })
-      .then(stocks => {
-        this.setState({
-          stocks: stocks
-        });
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  }
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Failed to load');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(stocks => {
+  //       this.setState({
+  //         stocks: stocks
+  //       });
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //     });
+  // }
 
 
 
@@ -53,7 +62,7 @@ class App extends Component {
       <>
         {stocks &&
           stocks.map(stock =>
-            <div>{stock}</div>)}
+            <div>{stock.id}{stock.name}</div>)}
       </>
     );
     // <div>

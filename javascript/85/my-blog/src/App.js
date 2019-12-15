@@ -14,10 +14,6 @@ export default class App extends Component {
       selectedBlog: blogger
 
     });
-    setTimeout(() => {
-      console.log(this.state.selectedBlog)
-      return (<div>{this.state.selectedBlog.name}</div>)
-    }, 1000);
 
     // return (<Posts blogger={this.state.selectedBlog} />)
 
@@ -65,8 +61,7 @@ export default class App extends Component {
       <>
 
         {this.state.bloggers && this.state.bloggers.map(blogger => < div className="blog" onClick={event => this.handleSelectedBlog(event, blogger)} key={blogger.id} >{blogger.id} <div>{blogger.name}</div></div>)}
-        <div>{this.state.selectedBlog && this.state.selectedBlog.name}</div>
-        <Posts blogger={this.state.selectedBlog && this.state.selectedBlog} />
+        {this.state.selectedBlog && <Posts blogger={this.state.selectedBlog} />}
 
       </>
 
