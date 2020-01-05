@@ -5,7 +5,7 @@ export default class NoteForm extends Component {
 
     state = {
         title: '',
-        note: ''
+        message: ''
     }
 
     handleTitleChange = e => {
@@ -16,7 +16,7 @@ export default class NoteForm extends Component {
 
     handleNoteChange = e => {
         this.setState({
-            note: e.target.value
+            message: e.target.value
         });
     }
 
@@ -24,7 +24,7 @@ export default class NoteForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.onSubmit(this.state.title, this.state.note);
+        this.props.onSubmit(this.state.title, this.state.message);
     }
 
 
@@ -41,7 +41,7 @@ export default class NoteForm extends Component {
                         <input name="title" type="text" className="form-control" value={this.state.title} onChange={this.handleTitleChange} id="formGroupExampleInput" placeholder="Title Here"></input>
                     </div>
                     <div className="form-group">
-                        <textarea name="note" className="form-control" value={this.state.note} onChange={this.handleNoteChange} id="exampleFormControlTextarea1" rows="3" placeholder="type your note here..."></textarea>
+                        <textarea name="message" className="form-control" value={this.state.message} onChange={this.handleNoteChange} id="exampleFormControlTextarea1" rows="3" placeholder="type your note here..."></textarea>
                     </div>
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary" /*onClick={this.props.onNewNote}*/>Submit</button>
