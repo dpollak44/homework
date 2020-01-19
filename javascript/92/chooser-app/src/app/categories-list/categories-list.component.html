@@ -1,0 +1,5 @@
+<select #selectedCategory (change)="chosenCategory(selectedCategory.value)">
+    <option *ngFor="let category of categories">
+        <h4 *ngFor="let item of items"></h4>
+    </option>
+</select>
