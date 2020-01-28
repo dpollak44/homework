@@ -1,0 +1,17 @@
+{
+  "name": "98",
+  "version": "1.0.0",
+  "description": "",
+  "main": "connect.js",
+  "dependencies": {
+    "connect": "^3.7.0",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
