@@ -1,0 +1,16 @@
+extends layout
+
+block content
+   h1 #{title}
+   table#contactsTable
+    thead
+        tr
+         th 
+         th First Name
+         th Phone
+    tbody
+          each value in contacts
+            tr
+             each val in value
+                td= index 
+                td= val
