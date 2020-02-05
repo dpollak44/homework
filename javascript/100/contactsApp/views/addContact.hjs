@@ -1,0 +1,22 @@
+<form id="contactForm" method="post">
+    <div class="formGroup">
+        <label for="firstName">first</label>
+        <input id="firstName" name="firstName" required />
+    </div>
+    <div class="formGroup">
+        <label for="lastName">last</label>
+        <input id="lastName" name="lastName" required />
+    </div>
+    <div class="formGroup">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" />
+    </div>
+    <div class="formGroup">
+        <label for="phone">phone</label>
+        <input type="tel" id="phone" name="phone" />
+    </div>
+    <div class="buttons">
+        <button class="btn">add</button>
+        <a class="btn" href="/contacts">cancel</a>
+    </div>
+</form>

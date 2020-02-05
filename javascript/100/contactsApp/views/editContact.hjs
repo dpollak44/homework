@@ -1,0 +1,24 @@
+<form id="editContact" method="post">
+    <div class="formGroup">
+        {{#contacts}}
+        <label for="firstName">first</label>
+        <input id="firstName" name="firstName" value="{{FirstName}}" required />
+    </div>
+    <div class="formGroup">
+        <label for="lastName">last</label>
+        <input id="lastName" name="lastName" value="{{LastName}}" required />
+    </div>
+    <div class="formGroup">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" value="{{email}}" />
+    </div>
+    <div class="formGroup">
+        <label for="phone">phone</label>
+        <input type="tel" id="phone" name="phone" value="{{phone}}" />
+        {{/contacts}}
+    </div>
+    <div class="buttons">
+        <button class="btn">edit</button>
+        <a class="btn" href="/contacts">cancel</a>
+    </div>
+</form>
