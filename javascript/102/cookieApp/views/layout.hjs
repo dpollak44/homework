@@ -4,35 +4,14 @@
 <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <style>
-        body {
-            color: {
-                    {
-                    color
-                }
-            }
 
-            ;
-
-            background-color: {
-                    {
-                    bgcolor
-                }
-            }
-
-            ;
-        }
-    </style>
 </head>
 
 <body>
     <h1>{{ title }}</h1>
     <form>
-        <label>Text Color
-            <input type="color" name="color" value="{{color}}" />
-        </label>
-        <label>Background Color
-            <input type="color" name="bgcolor" value="{{bgcolor}}" />
+        <label>Name
+            <input type="text" name="name" value="{{name}}" />
         </label>
         <button>submit</button>
     </form>

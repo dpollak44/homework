@@ -20,17 +20,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-  const cookieSettings = req.cookies['settings'] ? JSON.parse(req.cookies['settings']) : {};
+  const cookieSetName = req.cookies['name'] ? JSON.parse(req.cookies['name']) : {};
 
-  const settings = {
-    color: req.query.color || cookieSettings.color || '#000000',
-    bgColor: req.query.bgcolor || cookieSettings.bgColor || 'white'
-  };
 
-  res.cookie('settings', JSON.stringify(settings));
+  res.cookie('name', JSON.stringify(cookieSetName));
 
-  res.locals.color = settings.color;
-  res.locals.bgColor = settings.bgColor;
+  res.locals.name = cookieSetName;
 
   next();
 });
