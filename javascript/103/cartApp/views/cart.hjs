@@ -1,0 +1,17 @@
+<a href="/">Continue Shopping</a>
+{{#items}}
+{{!-- <div class="card mb-4 shadow-sm">
+    <div class="card-header"> --}}
+<h4 class="my-0 font-weight-normal">{{id}}</h4>
+{{!-- </div>
+    <div class="card-body item">
+        <img class="img-fluid" src="{{img}}" alt={{name}} />
+        <ul class="list-unstyled mt-3 mb-4">
+            <li>{{description}}</li>
+            <li>{{price}}</li>
+        </ul>
+    </div>
+    </form>
+</div>
+</div> --}}
+{{/items}}
