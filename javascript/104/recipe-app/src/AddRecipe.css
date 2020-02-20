@@ -1,0 +1,8 @@
+.add-recipe label {
+  display: block;
+  width: 100%;
+}
+
+.add-recipe input, .add-recipe textarea {
+  width: 100%;
+}
