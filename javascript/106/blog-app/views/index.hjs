@@ -1,0 +1,17 @@
+<p>Welcome to {{ title }}</p>
+
+<div class="error">{{message}}</div>
+<hr />
+
+<form method="POST" action="/login">
+  <label>
+    Name:
+    <input name="user">
+  </label>
+  <label>
+    Password:
+    <input type="password" name="password">
+  </label>
+  <button>login</button>
+  <a href="/register">register</a>
+</form>

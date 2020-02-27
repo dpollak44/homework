@@ -8,16 +8,16 @@
 
     const theTable = $('#theTable tbody');
 
-    let fruitsAndVeggies
 
     try {
-        let res = await fetch('/');
+        let res = await fetch('/app.js');
+
         if (!res.ok) {
-            const result = await res.json();
-            throw new Error(` ${result.error}`);
+            throw new Error(` ${res.error}`);
         }
 
-        let fruitsAndVeggies = await res.json;
+        let fruitsAndVeggies = await res.json();
+
         fruitsAndVeggies.forEach(fv => {
             $(`<tr>
             <td>${fv.name}</td>
@@ -26,14 +26,13 @@
                 <button class="delete">delete</button>
             </td>
          </tr>`).appendTo(theTable);
-
-
         });
 
 
     } catch (error) {
         console.log(error);
-    }
-});
+    };
 
 }());
+
+
