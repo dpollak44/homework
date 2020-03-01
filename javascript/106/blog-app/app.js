@@ -3,20 +3,20 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var db = require('../pool');
+var db = require('./pool');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-const mysql = require('mysql');
+// const mysql = require('mysql');
 
-const db = mysql.createPool({
-  connectionLimit: 10,
-  host: 'localhost',
-  user: 'dpollak',
-  password: 'password',
-  database: 'pcs'
-});
+// const db = mysql.createPool({
+//   connectionLimit: 10,
+//   host: 'localhost',
+//   user: 'dpollak2',
+//   password: 'TzviYehuda1',
+//   database: 'pcs'
+// });
 
 // module.exports = pool;
 
@@ -39,26 +39,32 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use('/login', function (req, res, next) {
+app.post('/login', function (req, res, next) {
 
   db.query('SELECT password FROM users WHERE user = ?',
     [req.body.user], (error, results) => {
       if (error) return next(error);
       if (!results.length) return next(new Error('Invalid username and password'));
+      console.log(results);
       res.locals.user = req.body.user;
+      // console.log(res.locals.user);
+
     });
 
   db.query('SELECT user FROM users WHERE password = ?',
     [req.body.password], (error, results) => {
       if (error) return next(error);
-      if (!results.length) return next(new Error('Invalid username and password'));
+      if (!results.length || results[0].password !== req.body.password) return next(new Error('Invalid username and password'));
     });
 
   res.redirect('/topSecret');
+
+  next();
 });
 
 app.get('/topSecret', function (req, res, next) {
-  res.send(`Hello ${res.locals.user}`);
+  // console.log(res.locals.user);
+  res.render('layout', { partials: { content: 'topSecret' } });
 });
 
 

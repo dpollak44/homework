@@ -8,7 +8,7 @@
 
 <body>
     <h1>{{ appTitle }}</h1>
-    <a href="/login">login</a> | <a href="/logout">logout</a> | <a href="/topSecret">top secret page</a>
+    <a href="/">login</a> | <a href="/logout">logout</a> | <a href="/topSecret">top secret page</a>
     {{#user}}<small>logged in as {{user}}</small>{{/user}}
 
 
